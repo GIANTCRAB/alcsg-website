@@ -1,0 +1,14 @@
+#cover-wrapper {
+  background-image: url("../../../assets/img/alc-cover.jpg");
+
+  background-position: center center !important;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  overflow: hidden;
+
+  height: 80vh;
+}
