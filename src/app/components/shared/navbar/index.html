@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark gradient-blackberry">
   <a class="navbar-brand" routerLink="/">ALittleChange</a>
   <button class="navbar-toggler navbar-toggler-right" type="button" aria-controls="appNavigation"
           [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation" (click)="toggleMenu()">
@@ -14,6 +14,25 @@
       </li>
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <a routerLink="/contact" class="nav-link">Contact</a>
+      </li>
+      <li class="nav-item" ngbDropdown placement="bottom-right">
+        <a class="nav-link position-relative" id="dropdownProgrammes" ngbDropdownToggle>
+          <span>Programmes</span>
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropdownProgrammes">
+          <a class="dropdown-item py-1" routerLink="/programmes/a-little-festivies">
+            <span>ALFestivies</span>
+          </a>
+          <a class="dropdown-item py-1" routerLink="/programmes/a-little-camera">
+            <span>ALCamera</span>
+          </a>
+          <a class="dropdown-item py-1" routerLink="/programmes/a-little-conference">
+            <span>ALConference</span>
+          </a>
+          <a class="dropdown-item py-1" routerLink="/programmes/schools">
+            <span>Schools</span>
+          </a>
+        </div>
       </li>
     </ul>
   </div>
