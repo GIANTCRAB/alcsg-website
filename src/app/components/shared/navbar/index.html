@@ -9,12 +9,6 @@
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <a routerLink="/" class="nav-link">Home</a>
       </li>
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <a routerLink="/about" class="nav-link">About</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <a routerLink="/contact" class="nav-link">Contact</a>
-      </li>
       <li class="nav-item" ngbDropdown placement="bottom-right">
         <a class="nav-link position-relative" id="dropdownProgrammes" ngbDropdownToggle>
           <span>Programmes</span>
@@ -33,6 +27,12 @@
             <span>Schools</span>
           </a>
         </div>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/about" class="nav-link">About</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/contact" class="nav-link">Contact</a>
       </li>
     </ul>
   </div>
