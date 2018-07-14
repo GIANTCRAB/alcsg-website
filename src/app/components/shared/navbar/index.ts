@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.scss']
 })
 export class NavbarComponent implements OnInit {
+  public isCollapsed = true;
+  public faBars = faBars;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  public toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
