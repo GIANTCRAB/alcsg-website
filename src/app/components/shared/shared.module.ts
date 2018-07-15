@@ -5,6 +5,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {RouterModule} from '@angular/router';
 import {routes} from './routes';
 import {NavbarComponent} from './navbar';
+import {FooterComponent} from './footer';
 
 @NgModule({
   imports: [
@@ -15,10 +16,12 @@ import {NavbarComponent} from './navbar';
   ],
   exports: [
     FontAwesomeModule,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ]
 })
 export class SharedModule {
