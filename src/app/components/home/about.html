@@ -1,0 +1,46 @@
+<div id="about">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col">
+        <h2>A Little About Us</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <p>We believe ideas come from everyone, everywhere. We act as a catalyst for leaders by providing them a platform
+          to start up volunteer events for social causes they believe in. We’re big believers in doing right by our
+          neighbors. So we do what we can to support the community we love.</p>
+      </div>
+      <div class="col-lg-6">
+        <p>Our vision is to allow every volunteer to have an opportunity to make a little change. We also believe that the
+          little change contributed by these volunteers can make a big difference. Our mission is to provide a platform
+          which integrates all volunteers and provide them with the resources that can aid them in volunteering.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col">
+        <h2>Our Members</h2>
+      </div>
+    </div>
+    <div id="members" *ngIf="members$ | async; let members; else loading">
+      <div class="grid-hover">
+        <div class="row">
+          <div class="col-md-12 col-lg-6 col-xl-4" *ngFor="let memberResult of members.results">
+            <figure class="effect-zoe">
+              <img [src]="memberResult.data.image.url" class="img-fluid"/>
+              <figcaption>
+                <h2>{{memberResult.data.name[0].text}}</h2>
+                <p class="description">{{memberResult.data.description[0].text}}</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #loading>
+    </ng-template>
+  </div>
+</div>

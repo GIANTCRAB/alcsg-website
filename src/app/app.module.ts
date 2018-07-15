@@ -10,6 +10,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app';
 import {HomeComponent} from './components/home';
+import {AboutComponent} from './components/home/about';
 import {routes} from './routes';
 import {SharedModule} from './components/shared/shared.module';
 import {PrismicService} from './services/prismic';
@@ -19,7 +20,8 @@ import {EventsModule} from './components/events/events.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
