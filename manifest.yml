@@ -1,0 +1,10 @@
+---
+applications:
+- name: website
+  memory: 128M
+  instances: 1
+  path: dist/alcsg
+  buildpack: staticfile_buildpack
+  routes:
+    - route: alittlechange.sg
+    - route: alcsg.cfapps.io
