@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {faUsers, faBook, faHandHoldingHeart} from '@fortawesome/free-solid-svg-icons';
 import {PrismicService} from '../../services/prismic';
-import {from, Observable} from 'rxjs';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.events$ = from(this.prismicService.queryEvents());
+    this.events$ = this.prismicService.queryEvents();
   }
 
 }

@@ -1,3 +1,28 @@
-<p>
-  navigator works!
-</p>
+<div id="event" *ngIf="event$ | async; let event; else loading">
+  <div class="container" *ngIf="event.results[0]; let eventResult; else notFound">
+    <div class="row">
+      <div class="col-lg-4 col-md-12">
+        <img class="img-fluid" [src]="eventResult.data['main-img'].url"
+             [alt]="eventResult.data['main-img'].url">
+        <h2>{{eventResult.data.title[0].text}}</h2>
+        <h4 class="text-muted">{{eventResult.data['event-date'] | date}}</h4>
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <div *ngFor="let eventDescription of eventResult.data.description">
+          <ng-container *ngIf="eventDescription.type === 'paragraph'">
+            <p>{{eventDescription.text}}</p>
+          </ng-container>
+          <ng-container *ngIf="eventDescription.type === 'image'">
+            <img class="img-fluid" [src]="eventDescription.url" [alt]="eventDescription.alt">
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+</ng-template>
+
+<ng-template #notFound>
+</ng-template>
