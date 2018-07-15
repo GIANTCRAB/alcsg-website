@@ -14,6 +14,7 @@ import {routes} from './routes';
 import {SharedModule} from './components/shared/shared.module';
 import {PrismicService} from './services/prismic';
 import {PipeModule} from './pipes/pipe.module';
+import {EventsModule} from './components/events/events.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {PipeModule} from './pipes/pipe.module';
     HttpClientModule,
     PipeModule,
     SharedModule,
+    EventsModule,
     NgbModule.forRoot(),
     StoreModule.forRoot(reducers, {initialState: INITIAL_APP_STATE}),
     RouterModule.forRoot(routes),

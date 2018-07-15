@@ -6,5 +6,9 @@ export const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: HomeComponent
+  },
+  {
+    path: 'events',
+    loadChildren: './components/events/events.module#EventsModule'
   }
 ];
