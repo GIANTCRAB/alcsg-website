@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import * as Prismic from 'prismic-javascript';
 import {Context} from '../struts/context';
 import {CONFIG} from '../prismic-configuration';
+import {from, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -42,24 +43,27 @@ export class PrismicService {
       );
   }
 
-  public query(q: string) {
-    return Prismic.getApi(CONFIG.apiEndpoint)
+  public query(q: string): Observable<any> {
+    return from(Prismic.getApi(CONFIG.apiEndpoint)
       .then(function (api) {
         return api.query(q, null, null); // An empty query will return all the documents
-      });
+      }));
   }
 
-  public queryEvents() {
-    return Prismic.getApi(CONFIG.apiEndpoint)
+  public queryEvents(): Observable<any> {
+    return from(Prismic.getApi(CONFIG.apiEndpoint)
       .then(function (api) {
         return api.query(Prismic.Predicates.at('document.type', 'events'), {orderings: '[my.events.event-date desc]', pageSize : 6}, null);
-      });
+      }));
   }
 
-  public getPostById(id: string) {
-    return Prismic.getApi(CONFIG.apiEndpoint)
+  public getPostById(type: string, id: string): Observable<any> {
+    return from(Prismic.getApi(CONFIG.apiEndpoint)
       .then(function (api) {
-        return api.query(Prismic.Predicates.at('document.id', id), null, null);
-      });
+        return api.query([
+          Prismic.Predicates.at('document.type', type),
+          Prismic.Predicates.at('document.id', id)
+        ], null, null);
+      }));
   }
 }
