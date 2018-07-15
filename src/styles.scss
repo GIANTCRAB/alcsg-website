@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+.parallax {
+  background-position: center center !important;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  overflow: hidden;
+}
