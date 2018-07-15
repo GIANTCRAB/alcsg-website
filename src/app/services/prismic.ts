@@ -52,7 +52,7 @@ export class PrismicService {
   public queryEvents() {
     return Prismic.getApi(CONFIG.apiEndpoint)
       .then(function (api) {
-        return api.query(Prismic.Predicates.at('document.type', 'events'), {orderings: '[my.events.event-date desc]'}, null);
+        return api.query(Prismic.Predicates.at('document.type', 'events'), {orderings: '[my.events.event-date desc]', pageSize : 6}, null);
       });
   }
 
