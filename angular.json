@@ -127,7 +127,9 @@
   "defaultProject": "alcsg",
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "scss"
+      "styleext": "scss",
+      "spec": false,
+      "changeDetection": "OnPush"
     }
   }
 }
