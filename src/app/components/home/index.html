@@ -11,7 +11,7 @@
       <fa-icon [icon]="faIcons.volunteer" size="5x" class="text-secondary"></fa-icon>
       <h3>Volunteer</h3>
       <p>Volunteer for causes you believe in. Empower, inspire and change the lives of others.</p>
-      <a routerLink="/contact" class="btn btn-primary btn-raised">Join Us</a>
+      <a routerLink="/contact" class="btn btn-light-blue btn-accent-4 btn-raised">Join Us</a>
     </div>
     <div class="col-lg-4 col-md-12">
       <fa-icon [icon]="faIcons.learn" size="5x" class="text-secondary"></fa-icon>
@@ -22,7 +22,7 @@
       <fa-icon [icon]="faIcons.sponsor" size="5x" class="text-secondary"></fa-icon>
       <h3>Sponsor</h3>
       <p>Support and sponsor causes and events that you or your company believe in.</p>
-      <a routerLink="/sponsor" class="btn btn-primary btn-raised">Sponsor</a>
+      <a routerLink="/sponsor" class="btn btn-light-blue btn-accent-4 btn-raised">Sponsor</a>
     </div>
   </div>
 </div>
@@ -30,6 +30,24 @@
   <div class="row">
     <div class="col text-center">
       <h2>Projects</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-1">
+      <ng-template #loading>
+      </ng-template>
+      <div class="card-columns" *ngIf="events$ | async; let events; else loading">
+        <div class="card" *ngFor="let eventResult of events.results">
+          <div class="card-body">
+            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">{{eventResult.data.title[0].text}}</h4>
+              <p class="card-text">{{eventResult.data.description[0].text | truncate:[150]}}</p>
+              <a routerLink="/posts/{{eventResult.id}}" class="btn btn-light-blue btn-accent-1 btn-raised">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
