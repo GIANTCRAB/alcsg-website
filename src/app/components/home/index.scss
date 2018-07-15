@@ -1,14 +1,19 @@
 #cover-wrapper {
   background-image: url("../../../assets/img/alc-cover.jpg");
+  margin-bottom: 45px;
 
-  background-position: center center !important;
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: repeat;
-  overflow: hidden;
+  #cover {
+    height: 80vh;
+    text-align: center;
+    background-color: rgba(33, 33, 33, 0.35);
+    padding-top: 15vh;
 
-  height: 80vh;
+    .logo {
+      max-height: 256px;
+    }
+
+    h1 {
+      margin-top: 15px;
+    }
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {faUsers, faBook, faHandHoldingHeart} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.scss']
 })
 export class HomeComponent implements OnInit {
+  public faIcons: any = {
+    volunteer: faUsers,
+    learn: faBook,
+    sponsor: faHandHoldingHeart
+  };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
