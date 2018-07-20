@@ -16,12 +16,14 @@ import {SharedModule} from './components/shared/shared.module';
 import {PrismicService} from './services/prismic';
 import {PipeModule} from './pipes/pipe.module';
 import {EventsModule} from './components/events/events.module';
+import { ContactComponent } from './components/home/contact';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
