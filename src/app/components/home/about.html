@@ -31,8 +31,8 @@
             <figure class="effect-zoe">
               <img [src]="memberResult.data.image.url" class="img-fluid"/>
               <figcaption>
-                <h2>{{memberResult.data.name[0].text}}</h2>
-                <p class="description">{{memberResult.data.description[0].text}}</p>
+                <h2 *ngIf="memberResult.data.name[0]">{{memberResult.data.name[0].text}}</h2>
+                <p class="description" *ngIf="memberResult.data.description[0]">{{memberResult.data.description[0].text}}</p>
               </figcaption>
             </figure>
           </div>
