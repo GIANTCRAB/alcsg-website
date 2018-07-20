@@ -6,15 +6,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-6">
-        <p>We believe ideas come from everyone, everywhere. We act as a catalyst for leaders by providing them a platform
-          to start up volunteer events for social causes they believe in. We’re big believers in doing right by our
-          neighbors. So we do what we can to support the community we love.</p>
-      </div>
-      <div class="col-lg-6">
-        <p>Our vision is to allow every volunteer to have an opportunity to make a little change. We also believe that the
-          little change contributed by these volunteers can make a big difference. Our mission is to provide a platform
-          which integrates all volunteers and provide them with the resources that can aid them in volunteering.</p>
+      <div class="col-lg">
+        <p>ALittleChange, is an organisation that started off by like-minded people with similar aspiration of making
+          our society a better one. As the years goes by, increasing number of youth are beginning to take interest in
+          volunteering and the more important thing would be to educate the youth the significance of volunteering so
+          that they can understand the needs of the society. We aim to be a catalyst, a platform to improve the
+          situation in today's society where youth can inculcate volunteering into their lives and help the ones in
+          need.</p>
       </div>
     </div>
   </div>
@@ -32,7 +30,8 @@
               <img [src]="memberResult.data.image.url" class="img-fluid"/>
               <figcaption>
                 <h2 *ngIf="memberResult.data.name[0]">{{memberResult.data.name[0].text}}</h2>
-                <p class="description" *ngIf="memberResult.data.description[0]">{{memberResult.data.description[0].text}}</p>
+                <p class="description" *ngIf="memberResult.data.description[0]">
+                  {{memberResult.data.description[0].text}}</p>
               </figcaption>
             </figure>
           </div>
