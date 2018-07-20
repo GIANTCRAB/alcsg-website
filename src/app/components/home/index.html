@@ -35,6 +35,7 @@
   <div class="row">
     <div class="col-md-12 mt-1">
       <ng-template #loading>
+        <app-loading></app-loading>
       </ng-template>
       <div class="card-columns" *ngIf="events$ | async; let events; else loading">
         <div class="card" *ngFor="let eventResult of events.results">

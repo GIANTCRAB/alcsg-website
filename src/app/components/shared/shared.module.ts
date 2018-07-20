@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 import {routes} from './routes';
 import {NavbarComponent} from './navbar';
 import {FooterComponent} from './footer';
+import {LoadingComponent} from './loading';
 
 @NgModule({
   imports: [
@@ -17,11 +18,13 @@ import {FooterComponent} from './footer';
   exports: [
     FontAwesomeModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingComponent
   ],
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingComponent
   ]
 })
 export class SharedModule {
