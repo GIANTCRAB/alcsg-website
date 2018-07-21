@@ -7,7 +7,7 @@ import {routes} from './routes';
 import {NavbarComponent} from './navbar';
 import {FooterComponent} from './footer';
 import {LoadingComponent} from './loading';
-import { NotFoundComponent } from './not-found';
+import {NotFoundComponent} from './not-found';
 
 @NgModule({
   imports: [
