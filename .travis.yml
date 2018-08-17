@@ -1,0 +1,33 @@
+language: node_js
+node_js:
+  - node
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - "node_modules"
+
+install:
+  - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+  - echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+  - sudo apt-get update
+  - sudo apt-get install cf-cli
+  - cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
+  - cf install-plugin blue-green-deploy -r CF-Community
+  - npm install -g @angular/cli
+  - npm install
+
+script:
+  - ng build --prod
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script:
+     - cf login $CF_API_ENDPOINT $CF_USERNAME $CF_PASSWORD $CF_ORGANIZATION $CF_SPACE
+     - cf blue-green-deploy $CF_APP
+  on:
+    branch: master
