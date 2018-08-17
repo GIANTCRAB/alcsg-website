@@ -12,7 +12,7 @@ install:
   - sudo apt-get update
   - sudo apt-get install cf-cli
   - cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
-  - sudo cf install-plugin blue-green-deploy -r CF-Community
+  - cf install-plugin blue-green-deploy -r CF-Community -f
   - npm install -g @angular/cli
   - npm install
 
