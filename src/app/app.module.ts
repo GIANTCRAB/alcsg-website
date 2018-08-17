@@ -11,7 +11,6 @@ import {routes} from './routes';
 import {SharedModule} from './components/shared/shared.module';
 import {PrismicService} from './services/prismic';
 import {PipeModule} from './pipes/pipe.module';
-import {EventsModule} from './components/events/events.module';
 import {ContactComponent} from './components/home/contact';
 
 @NgModule({
@@ -26,7 +25,6 @@ import {ContactComponent} from './components/home/contact';
     HttpClientModule,
     PipeModule,
     SharedModule,
-    EventsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
