@@ -3,7 +3,7 @@ import {NavigatorComponent} from './navigator';
 
 export const routes: Routes = [
   {
-    path: 'events/:id',
+    path: ':id',
     component: NavigatorComponent
   }
 ];
