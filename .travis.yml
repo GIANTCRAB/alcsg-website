@@ -22,6 +22,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: cf login -a $CF_API_ENDPOINT -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORGANIZATION -s $CF_SPACE && cf blue-green-deploy $CF_APP
+  script: cf login -a $CF_API_ENDPOINT -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORGANIZATION -s $CF_SPACE && cf blue-green-deploy $CF_APP --delete-old-apps
   on:
     branch: master
