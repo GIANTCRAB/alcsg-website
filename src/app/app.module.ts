@@ -12,6 +12,8 @@ import {SharedModule} from './components/shared/shared.module';
 import {PrismicService} from './services/prismic';
 import {PipeModule} from './pipes/pipe.module';
 import {ContactComponent} from './components/home/contact';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {ContactComponent} from './components/home/contact';
     PipeModule,
     SharedModule,
     NgbModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [
     PrismicService
