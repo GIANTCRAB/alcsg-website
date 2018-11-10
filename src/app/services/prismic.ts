@@ -18,12 +18,12 @@ export class PrismicService {
       }));
   }
 
-  public queryEvents(): Observable<any> {
+  public queryEvents(pageSize: number = 3): Observable<any> {
     return from(Prismic.getApi(CONFIG.apiEndpoint)
       .then(function (api) {
         return api.query(Prismic.Predicates.at('document.type', 'events'), {
           orderings: '[my.events.event-date desc]',
-          pageSize: 6
+          pageSize: pageSize
         }, null);
       }));
   }
