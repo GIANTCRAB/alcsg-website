@@ -4,14 +4,20 @@ import {NavigatorComponent} from './navigator';
 import {RouterModule} from '@angular/router';
 import {routes} from './routes';
 import {SharedModule} from '../shared/shared.module';
+import {EventsListComponent} from './list';
+import {PipeModule} from '../../pipes/pipe.module';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    PipeModule
   ],
-  declarations: [NavigatorComponent]
+  declarations: [
+    NavigatorComponent,
+    EventsListComponent
+  ]
 })
 export class EventsModule {
 }

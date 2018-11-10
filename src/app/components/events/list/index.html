@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h2>Past Projects</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-1">
+      <ng-template #loading>
+        <app-loading></app-loading>
+      </ng-template>
+    </div>
+  </div>
+  <div class="row" *ngIf="events$ | async; let events; else loading">
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let eventResult of events.results">
+      <div class="card">
+        <div class="card-body">
+          <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">{{eventResult.data.title[0].text}}</h4>
+            <p class="card-text">{{eventResult.data.description[0].text | truncate:[150]}}</p>
+            <a routerLink="/events/{{eventResult.id}}" class="btn btn-light-blue btn-accent-1 btn-raised">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
