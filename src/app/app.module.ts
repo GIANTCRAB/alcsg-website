@@ -25,7 +25,7 @@ import {ContactComponent} from './components/home/contact';
     HttpClientModule,
     PipeModule,
     SharedModule,
-    NgbModule.forRoot(),
+    NgbModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
