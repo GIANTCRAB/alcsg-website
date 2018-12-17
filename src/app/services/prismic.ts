@@ -28,6 +28,17 @@ export class PrismicService {
       }));
   }
 
+  public queryUpcomingEvents(pageSize: number = 3): Observable<any> {
+    return from(Prismic.getApi(CONFIG.apiEndpoint)
+      .then(function (api) {
+        return api.query(Prismic.Predicates.at('document.type', 'upcoming-events'), {
+          orderings: '[my.events.event-date desc]',
+          pageSize: pageSize
+        }, null);
+      }));
+  }
+
+
   public queryMembers(): Observable<any> {
     return from(Prismic.getApi(CONFIG.apiEndpoint)
       .then(function (api) {

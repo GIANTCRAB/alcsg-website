@@ -11,6 +11,7 @@ import {Observable} from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   public events$: Observable<any>;
+  public upcomingEvents$: Observable<any>;
 
   public faIcons: any = {
     volunteer: faUsers,
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.events$ = this.prismicService.queryEvents();
+    this.upcomingEvents$ = this.prismicService.queryUpcomingEvents();
   }
 
 }

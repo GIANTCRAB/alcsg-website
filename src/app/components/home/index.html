@@ -29,6 +29,32 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
+      <h2>Upcoming Events</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-1">
+      <ng-template #upcomingLoading>
+        <app-loading></app-loading>
+      </ng-template>
+      <div class="card-columns" *ngIf="upcomingEvents$ | async; let events; else upcomingLoading">
+        <div class="card" *ngFor="let eventResult of events.results">
+          <div class="card-body">
+            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url" [alt]="eventResult.data.title[0]">
+            <div class="card-block">
+              <h4 class="card-title">{{eventResult.data.title[0].text}}</h4>
+              <p class="card-text">{{eventResult.data.description[0].text | truncate:[150]}}</p>
+              <a [href]="eventResult.data['signup-url'].url" class="btn btn-light-blue btn-accent-1 btn-raised">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
       <h2>Past Projects</h2>
     </div>
   </div>
@@ -40,7 +66,7 @@
       <div class="card-columns" *ngIf="events$ | async; let events; else loading">
         <div class="card" *ngFor="let eventResult of events.results">
           <div class="card-body">
-            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url" alt="Card image cap">
+            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url" [alt]="eventResult.data.title[0]">
             <div class="card-block">
               <h4 class="card-title">{{eventResult.data.title[0].text}}</h4>
               <p class="card-text">{{eventResult.data.description[0].text | truncate:[150]}}</p>
