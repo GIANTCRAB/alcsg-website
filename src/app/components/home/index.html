@@ -1,6 +1,6 @@
 <div id="cover-wrapper" class="gradient-blue-grey-blue-grey parallax text-white">
   <div id="cover">
-    <img src="../../../assets/img/logo.png" class="logo" />
+    <img src="../../../assets/img/logo.png" class="logo"/>
     <h1>Change Starts Here</h1>
     <p>And You Can Be Part Of It</p>
   </div>
@@ -11,12 +11,13 @@
       <fa-icon [icon]="faIcons.volunteer" size="5x" class="text-secondary"></fa-icon>
       <h3>Volunteer</h3>
       <p>Volunteer for causes you believe in. Empower, inspire and change the lives of others.</p>
-      <a href="https://goo.gl/sDGFgn" class="btn btn-light-blue btn-accent-4 btn-raised" target="_BLANK" rel="noopener noreferrer">Join Us</a>
+      <a href="https://goo.gl/sDGFgn" class="btn btn-light-blue btn-accent-4 btn-raised" target="_BLANK"
+         rel="noopener noreferrer">Join Us</a>
     </div>
     <div class="col-lg-4 col-md-12">
       <fa-icon [icon]="faIcons.learn" size="5x" class="text-secondary"></fa-icon>
       <h3>Learn</h3>
-      <p></p>
+      <p>Learn leadership and volunteering skills to help others.</p>
     </div>
     <div class="col-lg-4 col-md-12">
       <fa-icon [icon]="faIcons.sponsor" size="5x" class="text-secondary"></fa-icon>
@@ -33,18 +34,20 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 mt-1">
+    <div class="col-md-12 col-lg-6 mt-1">
       <ng-template #upcomingLoading>
         <app-loading></app-loading>
       </ng-template>
       <div class="card-columns" *ngIf="upcomingEvents$ | async; let events; else upcomingLoading">
         <div class="card" *ngFor="let eventResult of events.results">
           <div class="card-body">
-            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url" [alt]="eventResult.data.title[0]">
+            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url"
+                 [alt]="eventResult.data.title[0]">
             <div class="card-block">
               <h4 class="card-title">{{eventResult.data.title[0].text}}</h4>
               <p class="card-text">{{eventResult.data.description[0].text | truncate:[150]}}</p>
-              <a [href]="eventResult.data['signup-url'].url" class="btn btn-light-blue btn-accent-1 btn-raised">Sign Up</a>
+              <a [href]="eventResult.data['signup-url'].url" class="btn btn-light-blue btn-accent-1 btn-raised">Sign
+                Up</a>
             </div>
           </div>
         </div>
@@ -59,18 +62,20 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 mt-1">
+    <div class="col-md-12 col-lg-6 mt-1">
       <ng-template #loading>
         <app-loading></app-loading>
       </ng-template>
       <div class="card-columns" *ngIf="events$ | async; let events; else loading">
         <div class="card" *ngFor="let eventResult of events.results">
           <div class="card-body">
-            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url" [alt]="eventResult.data.title[0]">
+            <img class="card-img-top img-fluid" [src]="eventResult.data['main-img'].url"
+                 [alt]="eventResult.data.title[0]">
             <div class="card-block">
               <h4 class="card-title">{{eventResult.data.title[0].text}}</h4>
               <p class="card-text">{{eventResult.data.description[0].text | truncate:[150]}}</p>
-              <a routerLink="/events/{{eventResult.id}}" class="btn btn-light-blue btn-accent-1 btn-raised">Read More</a>
+              <a routerLink="/events/{{eventResult.id}}" class="btn btn-light-blue btn-accent-1 btn-raised">Read
+                More</a>
             </div>
           </div>
         </div>
