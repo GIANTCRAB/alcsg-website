@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 col-lg-6 mt-1">
+    <div class="col-md-12 mt-1">
       <ng-template #upcomingLoading>
         <app-loading></app-loading>
       </ng-template>
@@ -51,6 +51,9 @@
             </div>
           </div>
         </div>
+        <div *ngIf="events.total_results_size === 0">
+          <p>There are currently no upcoming events</p>
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +65,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 col-lg-6 mt-1">
+    <div class="col-md-12 mt-1">
       <ng-template #loading>
         <app-loading></app-loading>
       </ng-template>
