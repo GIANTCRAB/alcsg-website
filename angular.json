@@ -21,7 +21,8 @@
             "assets": [
               "src/assets",
               "src/Staticfile",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/google0e98f4319f1e41ab.html"
             ],
             "styles": [
               "src/app/theme/app.scss",
@@ -81,7 +82,8 @@
             "scripts": [],
             "assets": [
               "src/assets",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/google0e98f4319f1e41ab.html"
             ]
           }
         },
