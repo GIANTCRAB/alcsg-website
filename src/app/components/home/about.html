@@ -7,12 +7,47 @@
     </div>
     <div class="row">
       <div class="col">
-        <p>ALittleChange, is an organisation that started off by like-minded people with similar aspiration of making
-          our society a better one. As the years goes by, increasing number of youth are beginning to take interest in
-          volunteering and the more important thing would be to educate the youth the significance of volunteering so
-          that they can understand the needs of the society. We aim to be a catalyst, a platform to improve the
-          situation in today's society where youth can inculcate volunteering into their lives and help the ones in
-          need.</p>
+        <p>ALittleChange is a youth-run, nonprofit organisation that works to strengthen family relationships in a
+          low-income setting, while engaging the youth community in Singapore.</p>
+        <p>Here, we value conversation and interaction, and are always on the lookout for new stories to listen to, and
+          new ways we can engage the people we work with.</p>
+        <p>It is our hope that through small acts of kindness, we will make big differences in peoples lives.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card-deck-wrapper">
+          <div class="card-deck">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-block">
+                  <h3 class="card-title text-center line-height-2 h3">Vision</h3>
+                  <p class="card-text">ALittleChange aims to create sustainable avenues that strengthen family
+                    relationships
+                    in a low-income setting
+                    while engaging the Singaporean youth community in volunteerism.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="card-block">
+                  <h3 class="card-title text-center line-height-2 h3">Mission</h3>
+                  <ul>
+                    <li>To take a ground-up approach to problem solving, and to work with families within their
+                      individual
+                      situational contexts
+                    </li>
+                    <li>To inform and educate youths on income inequality in Singapore</li>
+                    <li>To be a platform that youths can use to learn how to, or start their initiatives.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -20,7 +55,8 @@
     <div class="row text-center">
       <div class="col">
         <h2 class="content-header">Our Members</h2>
-        <p class="content-sub-header">These are our main committee members. Hover over or click each member to learn more about them!</p>
+        <p class="content-sub-header">These are our main committee members. Hover over or click each member to learn
+          more about them!</p>
       </div>
     </div>
     <div id="members" *ngIf="members$ | async; let members; else loading">
@@ -28,7 +64,7 @@
         <div class="row">
           <div class="col-md-12 col-lg-6 col-xl-4" *ngFor="let memberResult of members.results">
             <figure class="effect-oscar">
-              <img [src]="memberResult.data.image.url" class="img-fluid"/>
+              <img [src]="memberResult.data.image.url" class="img-fluid" [alt]="memberResult.data.name[0].text"/>
               <figcaption>
                 <h2 *ngIf="memberResult.data.name[0]">{{memberResult.data.name[0].text}}</h2>
                 <p class="description" *ngIf="memberResult.data.description[0]">
