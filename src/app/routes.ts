@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'events',
-    loadChildren: './components/events/events.module#EventsModule'
+    loadChildren: () => import('./components/events/events.module').then(m => m.EventsModule)
   },
   {
     path: '**',
