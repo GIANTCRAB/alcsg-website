@@ -30,7 +30,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
     "bootstrap": "^4.4.1",
     "core-js": "^2.6.11",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.7.1",
     "rxjs": "^6.5.5",
